@@ -2,6 +2,18 @@
 
 All notable changes to `filament-jsoneditor` will be documented in this file.
 
+## 6.0.0 - 2026-05-12
+
+### Added
+- Full support for Filament v4.
+- Support for Laravel 12 and 13.
+- PHP 8.2 is now the minimum required version.
+- Adoption of new Filament v4 patterns (Schema architecture, dynamic field wrapper).
+
+### Changed
+- Updated state binding to use `$wire.$entangle`.
+- Improved internal type hinting and compatibility.
+
 ## 5.0.0 - 2026-05-12
 
 ### Added

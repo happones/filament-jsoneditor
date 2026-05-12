@@ -1,36 +1,29 @@
-<x-filament-forms::field-wrapper
-        :id="$getId()"
-        :label="$getLabel()"
-        :label-sr-only="$isLabelHidden()"
-        :helper-text="$getHelperText()"
-        :hint="$getHint()"
-        :hint-icon="$getHintIcon()"
-        :required="$isRequired()"
-        :state-path="$getStatePath()"
+<x-dynamic-component
+    :component="$getFieldWrapperView()"
+    :field="$field"
 >
     <div class="w-full"
          x-load-css="[@js(\Filament\Support\Facades\FilamentAsset::getStyleHref('happones-filament-jsoneditor', package: 'happones/jsoneditor'))]"
-         data-js-before="app.js"
          x-load-js="[@js(\Filament\Support\Facades\FilamentAsset::getScriptSrc('happones-filament-jsoneditor', package: 'happones/jsoneditor'))]"
          data-dispatch="jsoneditor-loaded"
          x-on:jsoneditor-loaded-js.window="start"
          x-data="{
-            state: $wire.entangle('{{ $getStatePath() }}'),
+            state: $wire.$entangle('{{ $getStatePath() }}'),
             editor: null,
             destroy() {
+                if (this.editor) {
+                    this.editor.destroy();
+                }
                 this.editor = null;
             },
             start() {
                 $nextTick(() => {
-                    if(this.editor !== null) {
+                    if (this.editor !== null) {
                         return;
                     }
                     const options = {
                         modes: {{ $getModes() }},
                         history: true,
-                        onChange: () => {
-                            // onChange callback code if needed
-                        },
                         onChangeJSON: (json) => {
                             this.state = JSON.stringify(json);
                         },
@@ -38,19 +31,10 @@
                             this.state = jsonString;
                         },
                         onValidationError: (errors) => {
-                            errors.forEach((error) => {
-                                switch (error.type) {
-                                    case 'validation': // schema validation error
-                                        // Handle schema validation error
-                                        break;
-                                    case 'error':  // json parse error
-                                        console.log(error.message);
-                                        break;
-                                }
-                            });
+                            // Validation error handling
                         }
                     };
-                    if(typeof JSONEditor !== 'undefined') {
+                    if (typeof JSONEditor !== 'undefined') {
                         this.editor = new JSONEditor($refs.editor, options);
                         Alpine.raw(this.editor).set(this.state);
                     }
@@ -61,4 +45,4 @@
          wire:ignore>
         <div x-ref="editor" class="w-full ace_editor" style="min-height: 30vh;height:{{ $getHeight() }}px"></div>
     </div>
-</x-filament-forms::field-wrapper>
+</x-dynamic-component>

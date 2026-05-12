@@ -4,10 +4,12 @@ namespace Happones\FilamentJsoneditor\Forms;
 
 use Closure;
 use Filament\Forms\Components\Field;
+use Filament\Forms\Get;
+use Filament\Forms\Set;
 
 class JSONEditor extends Field
 {
-    public string $view = 'filament-jsoneditor::json-editor';
+    protected string $view = 'filament-jsoneditor::json-editor';
 
     protected int | Closure | null $height = 300;
 
@@ -37,15 +39,15 @@ class JSONEditor extends Field
 
     public function getHeight(): ?int
     {
-        return $this->evaluate($this->height);
+        return (int) $this->evaluate($this->height);
     }
 
-    public function getModes(): ?string
+    public function getModes(): string
     {
-        if ($this->evaluate($this->isDisabled)) {
+        if ($this->isDisabled()) {
             return json_encode(['preview']);
         }
 
-        return json_encode($this->evaluate($this->modes));
+        return json_encode($this->evaluate($this->modes) ?? []);
     }
 }
