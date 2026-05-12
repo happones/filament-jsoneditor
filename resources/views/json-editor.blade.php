@@ -9,9 +9,9 @@
         :state-path="$getStatePath()"
 >
     <div class="w-full"
-         x-load-css="[@js(\Filament\Support\Facades\FilamentAsset::getStyleHref('invaders-filament-jsoneditor', package: 'invaders/jsoneditor'))]"
+         x-load-css="[@js(\Filament\Support\Facades\FilamentAsset::getStyleHref('happones-filament-jsoneditor', package: 'happones/jsoneditor'))]"
          data-js-before="app.js"
-         x-load-js="[@js(\Filament\Support\Facades\FilamentAsset::getScriptSrc('invaders-filament-jsoneditor', package: 'invaders/jsoneditor'))]"
+         x-load-js="[@js(\Filament\Support\Facades\FilamentAsset::getScriptSrc('happones-filament-jsoneditor', package: 'happones/jsoneditor'))]"
          data-dispatch="jsoneditor-loaded"
          x-on:jsoneditor-loaded-js.window="start"
          x-data="{

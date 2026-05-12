@@ -1,6 +1,6 @@
 <?php
 
-namespace InvadersXX\FilamentJsoneditor\Forms;
+namespace Happones\FilamentJsoneditor\Forms;
 
 use Closure;
 use Filament\Forms\Components\Field;
@@ -42,8 +42,8 @@ class JSONEditor extends Field
 
     public function getModes(): ?string
     {
-        if ($this->isDisabled()) {
-            $this->modes = ['preview'];
+        if ($this->evaluate($this->isDisabled)) {
+            return json_encode(['preview']);
         }
 
         return json_encode($this->evaluate($this->modes));

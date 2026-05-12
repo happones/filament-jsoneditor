@@ -1,48 +1,48 @@
 {
-    "name": "invaders-xx/filament-jsoneditor",
+    "name": "happones/filament-jsoneditor",
     "description": "Filament's JSON Editor input",
     "keywords": [
-        "invaders-xx",
+        "happones",
         "laravel",
         "filament-jsoneditor",
         "jsoneditor"
     ],
-    "homepage": "https://github.com/invaders-xx/filament-jsoneditor",
+    "homepage": "https://github.com/happones/filament-jsoneditor",
     "license": "MIT",
     "authors": [
         {
-            "name": "David Vincent",
-            "email": "envahisseur@gmail.com",
+            "name": "Omar Hernandez",
+            "email": "happones@hotmail.com",
             "role": "Owner"
         }
     ],
     "require": {
-        "php": "^8.0",
-        "filament/filament": "^3.0",
+        "php": "^8.1",
+        "filament/filament": "^3.2",
         "spatie/laravel-package-tools": "^1.9.2",
         "illuminate/contracts": "^8.74|^9.0|^10.0|^11.0|^12.0"
     },
     "require-dev": {
-        "nunomaduro/collision": "^6.0",
-        "nunomaduro/larastan": "^2.0.1",
-        "orchestra/testbench": "^7.0",
-        "pestphp/pest": "^1.21",
-        "pestphp/pest-plugin-laravel": "^1.1",
+        "nunomaduro/collision": "^7.0",
+        "larastan/larastan": "^2.0.1",
+        "orchestra/testbench": "^8.0",
+        "pestphp/pest": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.0",
         "phpstan/extension-installer": "^1.1",
         "phpstan/phpstan-deprecation-rules": "^1.0",
         "phpstan/phpstan-phpunit": "^1.0",
-        "phpunit/phpunit": "^9.5",
+        "phpunit/phpunit": "^10.1.2",
         "spatie/laravel-ray": "^1.26"
     },
     "autoload": {
         "psr-4": {
-            "InvadersXX\\FilamentJsoneditor\\": "src",
-            "InvadersXX\\FilamentJsoneditor\\Database\\Factories\\": "database/factories"
+            "Happones\\FilamentJsoneditor\\": "src",
+            "Happones\\FilamentJsoneditor\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "InvadersXX\\FilamentJsoneditor\\Tests\\": "tests"
+            "Happones\\FilamentJsoneditor\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -55,15 +55,18 @@
         "allow-plugins": {
             "pestphp/pest-plugin": true,
             "phpstan/extension-installer": true
+        },
+        "platform": {
+            "php": "8.1.0"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "InvadersXX\\FilamentJsoneditor\\FilamentJsoneditorServiceProvider"
+                "Happones\\FilamentJsoneditor\\FilamentJsoneditorServiceProvider"
             ],
             "aliases": {
-                "FilamentJsoneditor": "InvadersXX\\FilamentJsoneditor\\Facades\\FilamentJsoneditor"
+                "FilamentJsoneditor": "Happones\\FilamentJsoneditor\\Facades\\FilamentJsoneditor"
             }
         }
     },

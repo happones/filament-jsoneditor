@@ -1,10 +1,10 @@
 <?php
 
-namespace InvadersXX\FilamentJsoneditor\Tests;
+namespace Happones\FilamentJsoneditor\Tests;
 
 use Filament\FilamentServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use InvadersXX\FilamentJsoneditor\FilamentJsoneditorServiceProvider;
+use Happones\FilamentJsoneditor\FilamentJsoneditorServiceProvider;
 use Livewire\LivewireServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
@@ -15,7 +15,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'InvadersXX\\FilamentJsoneditor\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'Happones\\FilamentJsoneditor\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 

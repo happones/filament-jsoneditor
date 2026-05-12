@@ -1,10 +1,10 @@
 
 # JSON Editor form's input for the great Filament package
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/invaders-xx/filament-jsoneditor.svg?style=flat-square)](https://packagist.org/packages/invaders-xx/filament-jsoneditor)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/invaders-xx/filament-jsoneditor/run-tests?label=tests)](https://github.com/invaders-xx/filament-jsoneditor/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/invaders-xx/filament-jsoneditor/Check%20&%20fix%20styling?label=code%20style)](https://github.com/invaders-xx/filament-jsoneditor/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/invaders-xx/filament-jsoneditor.svg?style=flat-square)](https://packagist.org/packages/invaders-xx/filament-jsoneditor)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/happones/filament-jsoneditor.svg?style=flat-square)](https://packagist.org/packages/happones/filament-jsoneditor)
+[![GitHub Tests Action Status](https://github.com/happones/filament-jsoneditor/actions/workflows/run-tests.yml/badge.svg)](https://github.com/happones/filament-jsoneditor/actions/workflows/run-tests.yml)
+[![GitHub Code Style Action Status](https://github.com/happones/filament-jsoneditor/actions/workflows/php-cs-fixer.yml/badge.svg)](https://github.com/happones/filament-jsoneditor/actions/workflows/php-cs-fixer.yml)
+[![Total Downloads](https://img.shields.io/packagist/dt/happones/filament-jsoneditor.svg?style=flat-square)](https://packagist.org/packages/happones/filament-jsoneditor)
 
 If you need to have a JSON Editor field within your form. You have it !
 
@@ -15,7 +15,7 @@ If you need to have a JSON Editor field within your form. You have it !
 You can install the package via composer:
 
 ```bash
-composer require invaders-xx/filament-jsoneditor
+composer require happones/filament-jsoneditor
 ```
 
 ```bash
@@ -43,13 +43,13 @@ class MyModel extends Model
 
 ```php
 [
-    \InvadersXX\FilamentJsoneditor\Forms\JSONEditor::make('editor');
+    \Happones\FilamentJsoneditor\Forms\JSONEditor::make('editor');
 ]
 ```
 ## Options
 ```php
 [
-    \InvadersXX\FilamentJsoneditor\Forms\JSONEditor::make('editor')
+    \Happones\FilamentJsoneditor\Forms\JSONEditor::make('editor')
         ->height(500) // Set height to 500px, default is 300
         ->modes(['code', 'form', 'text', 'tree', 'view', 'preview']); // default is ['code', 'form', 'text', 'tree', 'view', 'preview']
 ]
@@ -74,7 +74,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [David Vincent](https://github.com/invaders-xx)
+- [Omar Hernandez](https://github.com/happones)
 - [All Contributors](../../contributors)
 
 ## License

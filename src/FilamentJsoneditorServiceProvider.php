@@ -1,6 +1,6 @@
 <?php
 
-namespace InvadersXX\FilamentJsoneditor;
+namespace Happones\FilamentJsoneditor;
 
 use Filament\Support\Assets\Css;
 use Filament\Support\Assets\Js;
@@ -19,15 +19,15 @@ class FilamentJsoneditorServiceProvider extends PackageServiceProvider
             ->hasViews();
 
         $this->publishes([
-            __DIR__ . '/../dist/jsoneditor/img/jsoneditor-icons.svg' => public_path('css/invaders/jsoneditor/img/jsoneditor-icons.svg'),
+            __DIR__ . '/../dist/jsoneditor/img/jsoneditor-icons.svg' => public_path('css/happones/jsoneditor/img/jsoneditor-icons.svg'),
         ], 'filament-jsoneditor-img');
     }
 
     public function packageBooted(): void
     {
         FilamentAsset::register([
-            Css::make('invaders-filament-jsoneditor', __DIR__ . '/../dist/jsoneditor/jsoneditor.min.css')->loadedOnRequest(),
-            Js::make('invaders-filament-jsoneditor', __DIR__ . '/../dist/jsoneditor/jsoneditor.min.js')->loadedOnRequest(),
-        ], 'invaders/jsoneditor');
+            Css::make('happones-filament-jsoneditor', __DIR__ . '/../dist/jsoneditor/jsoneditor.min.css')->loadedOnRequest(),
+            Js::make('happones-filament-jsoneditor', __DIR__ . '/../dist/jsoneditor/jsoneditor.min.js')->loadedOnRequest(),
+        ], 'happones/jsoneditor');
     }
 }

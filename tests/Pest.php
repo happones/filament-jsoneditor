@@ -1,5 +1,5 @@
 <?php
 
-use InvadersXX\FilamentJsoneditor\Tests\TestCase;
+use Happones\FilamentJsoneditor\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);

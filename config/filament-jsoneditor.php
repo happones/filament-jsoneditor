@@ -1,5 +1,5 @@
 <?php
-// config for InvadersXX/FilamentJsoneditor
+// config for Happones/FilamentJsoneditor
 return [
 
 ];
