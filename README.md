@@ -51,9 +51,25 @@ class MyModel extends Model
 [
     \Happones\FilamentJsoneditor\Forms\JSONEditor::make('editor')
         ->height(500) // Set height to 500px, default is 300
-        ->modes(['code', 'form', 'text', 'tree', 'view', 'preview']); // default is ['code', 'form', 'text', 'tree', 'view', 'preview']
+        ->modes(['code', 'form', 'text', 'tree', 'view', 'preview']) // default is ['code', 'form', 'text', 'tree', 'view', 'preview']
+        ->options([
+            'mainMenuBar' => true,
+            'navigationBar' => true,
+            'statusBar' => true,
+        ]); // default options can be set in config/filament-jsoneditor.php
 ]
 ```
+
+## Global Configuration
+
+You can publish the config file to set global defaults:
+
+```bash
+php artisan vendor:publish --tag=filament-jsoneditor-config
+```
+
+The config file allows you to set default height, modes, and other JSONEditor options.
+
 ## Testing
 
 ```bash

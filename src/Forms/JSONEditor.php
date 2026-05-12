@@ -11,9 +11,19 @@ class JSONEditor extends Field
 {
     protected string $view = 'filament-jsoneditor::json-editor';
 
-    protected int | Closure | null $height = 300;
+    protected int | Closure | null $height = null;
 
-    protected array | Closure | null $modes = ['code', 'form', 'text', 'tree', 'view', 'preview'];
+    protected array | Closure | null $modes = null;
+
+    protected array | Closure $options = [];
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->height(config('filament-jsoneditor.height', 300));
+        $this->modes(config('filament-jsoneditor.modes', ['code', 'form', 'text', 'tree', 'view', 'preview']));
+    }
 
     public function modes(array | Closure | null $modes): static
     {
@@ -25,6 +35,13 @@ class JSONEditor extends Field
     public function height(int | Closure | null $height): static
     {
         $this->height = $height;
+
+        return $this;
+    }
+
+    public function options(array | Closure $options): static
+    {
+        $this->options = $options;
 
         return $this;
     }
@@ -49,5 +66,13 @@ class JSONEditor extends Field
         }
 
         return json_encode($this->evaluate($this->modes) ?? []);
+    }
+
+    public function getOptions(): string
+    {
+        return json_encode(array_merge(
+            config('filament-jsoneditor.options', []),
+            $this->evaluate($this->options)
+        ));
     }
 }

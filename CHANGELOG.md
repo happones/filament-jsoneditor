@@ -2,6 +2,20 @@
 
 All notable changes to `filament-jsoneditor` will be documented in this file.
 
+## 7.0.0 - 2026-05-12
+
+### Added
+- Full support for Filament v5.
+- Support for Laravel 13.
+- Automatic dark mode support when Filament is in dark mode.
+- Global configuration support via `config/filament-jsoneditor.php`.
+- New `options()` method in `JSONEditor` field to pass custom configuration to the JS editor.
+- Updated `jsoneditor` JS library to version 10.4.3.
+
+### Changed
+- Refactored `JSONEditor` component to support global defaults.
+- Updated Blade view to merge global and local options.
+
 ## 6.0.0 - 2026-05-12
 
 ### Added

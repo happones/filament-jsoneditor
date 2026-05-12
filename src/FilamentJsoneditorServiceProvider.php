@@ -16,6 +16,7 @@ class FilamentJsoneditorServiceProvider extends PackageServiceProvider
     {
         $package
             ->name(static::$name)
+            ->hasConfigFile()
             ->hasViews();
 
         $this->publishes([
@@ -27,6 +28,7 @@ class FilamentJsoneditorServiceProvider extends PackageServiceProvider
     {
         FilamentAsset::register([
             Css::make('happones-filament-jsoneditor', __DIR__ . '/../dist/jsoneditor/jsoneditor.min.css')->loadedOnRequest(),
+            Css::make('happones-filament-jsoneditor-dark', __DIR__ . '/../dist/jsoneditor/jsoneditor-dark.css')->loadedOnRequest(),
             Js::make('happones-filament-jsoneditor', __DIR__ . '/../dist/jsoneditor/jsoneditor.min.js')->loadedOnRequest(),
         ], 'happones/jsoneditor');
     }
